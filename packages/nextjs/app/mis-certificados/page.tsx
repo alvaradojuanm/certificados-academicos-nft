@@ -9,7 +9,7 @@ export default function MisCertificados() {
   const { data: certificadosIds } = useScaffoldReadContract({
     contractName: "CertificadosAcademicos",
     functionName: "obtenerCertificadosDeEstudiante",
-    args: address ? [address] : undefined,
+    args: [address],
   });
 
   if (!address) {
