@@ -10,7 +10,7 @@ export default function VerificarCertificado() {
   const { data: certificado } = useScaffoldReadContract({
     contractName: "CertificadosAcademicos",
     functionName: "verificarCertificado",
-    args: searchId ? [BigInt(searchId)] : undefined,
+    args: searchId ? [BigInt(searchId)] : [undefined],
   });
 
   const handleVerificar = () => {
