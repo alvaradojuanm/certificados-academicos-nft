@@ -17,11 +17,6 @@ export default function EmitirCertificado() {
     functionName: "owner",
   });
 
-  const { data: totalCertificados } = useScaffoldReadContract({
-    contractName: "CertificadosAcademicos",
-    functionName: "totalCertificados",
-  });
-
   const { writeContractAsync: emitirCertificado } = useScaffoldWriteContract("CertificadosAcademicos");
 
   const handleEmitir = async () => {
@@ -93,13 +88,6 @@ export default function EmitirCertificado() {
           <span className="block text-4xl font-bold">🎓 Emitir Certificado</span>
           <span className="block text-2xl mt-2">Panel de Administración</span>
         </h1>
-
-        <div className="stats shadow w-full mb-8">
-          <div className="stat">
-            <div className="stat-title">Total Certificados Emitidos</div>
-            <div className="stat-value text-primary">{totalCertificados?.toString() || "0"}</div>
-          </div>
-        </div>
 
         <div className="bg-base-100 rounded-3xl shadow-xl p-8">
           <h2 className="text-2xl font-bold mb-6">Nuevo Certificado</h2>
